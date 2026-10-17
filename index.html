@@ -56,9 +56,9 @@
     }
 
     .page {
-      width: min(100% - 40px, 836px);
+      width: min(100% - 24px, 430px);
       margin-inline: auto;
-      padding: 10px 0 12px;
+      padding: 12px 0 10px;
       text-align: center;
     }
 
@@ -66,12 +66,12 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 30px;
+      gap: 18px;
     }
 
     .brand-x {
       color: #aeb6bf;
-      font-size: 35px;
+      font-size: 24px;
       font-weight: 650;
       transform: translateY(-2px);
     }
@@ -84,38 +84,43 @@
     }
 
     .brand {
-      width: 120px;
-      height: 120px;
-      border-radius: 29px;
-      filter: drop-shadow(
-        0 14px 24px rgba(21, 228, 101, 0.12)
-      );
+      width: 80px;
+      height: 80px;
+      border-radius: 20px;
+      filter:
+        drop-shadow(
+          0 14px 24px rgba(21, 228, 101, 0.12)
+        );
     }
 
     .brand.tiktok {
-      background-size: 1038px 1518px;
-      background-position: -360px -9px;
+      background-size: 692px 1012px;
+      background-position: -240px -6px;
     }
 
     .brand.gravy {
-      background-size: 1038px 1518px;
-      background-position: -558px -9px;
+      background-size: 692px 1012px;
+      background-position: -372px -6px;
     }
 
     .verified {
       width: fit-content;
-      min-width: 362px;
-      margin: 36px auto 38px;
-      padding: 17px 34px;
+      min-width: 250px;
+      margin: 24px auto 28px;
+      padding: 11px 20px;
+
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 20px;
+      gap: 12px;
+
       border: 2px solid #13823c;
       border-radius: 999px;
+
       color: var(--green);
       background: rgba(7, 42, 24, 0.55);
-      font-size: 27px;
+
+      font-size: 18px;
       font-weight: 760;
       letter-spacing: -0.4px;
     }
@@ -123,93 +128,65 @@
     .check {
       display: grid;
       place-items: center;
-      width: 40px;
-      height: 40px;
+
+      width: 29px;
+      height: 29px;
+
       border-radius: 50%;
+
       color: #052216;
       background: #20ce66;
-      font-size: 29px;
+
+      font-size: 21px;
       font-weight: 900;
       line-height: 1;
     }
 
     h1 {
       margin: 0;
-      font-size: clamp(42px, 5.3vw, 56px);
+      font-size: 32px;
       line-height: 1.05;
-      letter-spacing: -2.4px;
+      letter-spacing: -1.4px;
       font-weight: 850;
     }
 
     .lead {
-      max-width: 720px;
-      margin: 24px auto 25px;
+      max-width: 390px;
+      margin: 15px auto 28px;
       color: var(--muted);
-      font-size: 29px;
+      font-size: 16px;
       line-height: 1.45;
       letter-spacing: 0.1px;
-    }
-
-    .platform-picker {
-      width: fit-content;
-      margin: 0 auto 34px;
-      padding: 5px;
-      display: flex;
-      gap: 5px;
-      border: 2px solid #145c32;
-      border-radius: 999px;
-      background: rgba(5, 29, 18, 0.94);
-    }
-
-    .platform-button {
-      min-width: 145px;
-      padding: 11px 20px;
-      border: 0;
-      border-radius: 999px;
-      color: #aeb7b1;
-      background: transparent;
-      font-size: 18px;
-      font-weight: 780;
-      cursor: pointer;
-      transition:
-        color 0.18s ease,
-        background 0.18s ease,
-        box-shadow 0.18s ease;
-    }
-
-    .platform-button:hover,
-    .platform-button:focus-visible {
-      outline: none;
-      color: #ffffff;
-    }
-
-    .platform-button.active {
-      color: #052216;
-      background: var(--green);
-      box-shadow: 0 7px 20px rgba(43, 228, 119, 0.2);
     }
 
     .games {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 22px 20px;
+      gap: 12px;
     }
 
     .game-card {
       position: relative;
-      height: 305px;
-      padding: 36px 18px 27px;
+
+      height: 174px;
+      padding: 18px 7px 14px;
+
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
+
       overflow: hidden;
+
       border: 2px solid var(--green-muted);
-      border-radius: 34px;
+      border-radius: 20px;
+
       color: inherit;
       background: rgba(9, 29, 20, 0.93);
       text-decoration: none;
+
       cursor: pointer;
+
       transition:
         transform 0.18s ease,
         border-color 0.18s ease,
@@ -217,7 +194,7 @@
     }
 
     .game-card.featured {
-      border-width: 4px;
+      border-width: 3px;
       border-color: var(--green-border);
     }
 
@@ -227,75 +204,79 @@
       outline: none;
       transform: translateY(-4px);
       border-color: var(--green);
-      box-shadow: 0 18px 44px rgba(12, 201, 91, 0.15);
+      box-shadow:
+        0 18px 44px rgba(12, 201, 91, 0.15);
     }
 
     .game-icon {
-      width: 144px;
-      height: 144px;
-      margin-bottom: 20px;
-      border-radius: 34px;
+      width: 74px;
+      height: 74px;
+      margin-bottom: 11px;
+      border-radius: 18px;
     }
 
     .game-icon.block {
-      background-size: 1038px 1518px;
-      background-position: -234px -533px;
+      background-size: 533.42px 780.17px;
+      background-position: -120.25px -273.93px;
     }
 
     .game-icon.candy {
-      background-size: 1038px 1518px;
-      background-position: -661px -534px;
+      background-size: 533.42px 780.17px;
+      background-position: -339.7px -274.42px;
     }
 
     .game-icon.subway {
-      background-size: 1038px 1518px;
-      background-position: -234px -859px;
+      background-size: 533.42px 780.17px;
+      background-position: -120.25px -441.35px;
     }
 
     .game-icon.roblox {
-      background-size: 1038px 1518px;
-      background-position: -661px -859px;
+      background-size: 533.42px 780.17px;
+      background-position: -339.7px -441.35px;
     }
 
     .eyebrow {
       color: #bec4c0;
-      font-size: 22px;
+      font-size: 11px;
       line-height: 1.1;
       font-weight: 780;
       letter-spacing: 1.1px;
     }
 
     .game-name {
-      margin-top: 8px;
+      margin-top: 5px;
       color: var(--green);
-      font-size: 30px;
+      font-size: 16px;
       line-height: 1.05;
       font-weight: 840;
       letter-spacing: -0.6px;
     }
 
     .notice {
-      margin-top: 37px;
-      padding: 28px 32px;
+      margin-top: 20px;
+      padding: 16px 15px;
+
       display: grid;
-      grid-template-columns: 48px 1fr;
-      gap: 20px;
+      grid-template-columns: 27px 1fr;
+      gap: 10px;
+
       border: 3px solid var(--green-border);
-      border-radius: 31px;
+      border-radius: 20px;
+
       background: rgba(6, 25, 16, 0.92);
       text-align: left;
     }
 
     .lock {
       padding-top: 1px;
-      font-size: 37px;
+      font-size: 23px;
       line-height: 1;
     }
 
     .notice p {
       margin: 0;
       color: #d2d7d4;
-      font-size: 26px;
+      font-size: 13.5px;
       line-height: 1.43;
       letter-spacing: 0.05px;
     }
@@ -311,140 +292,16 @@
     }
 
     footer {
-      padding: 73px 10px 8px;
+      padding: 37px 8px 5px;
       color: #9fa7b0;
-      font-size: 24px;
+      font-size: 12px;
       line-height: 1.35;
       letter-spacing: 0.15px;
     }
 
-    @media (max-width: 680px) {
-      .page {
-        width: min(100% - 24px, 836px);
-        padding-top: 12px;
-      }
-
-      .brand-row {
-        gap: 20px;
-      }
-
-      .brand {
-        transform: scale(0.82);
-        margin: -10px;
-      }
-
-      .brand-x {
-        font-size: 27px;
-      }
-
-      .verified {
-        min-width: 0;
-        margin: 28px auto 31px;
-        padding: 13px 24px;
-        gap: 13px;
-        font-size: 20px;
-      }
-
-      .check {
-        width: 32px;
-        height: 32px;
-        font-size: 22px;
-      }
-
-      h1 {
-        font-size: clamp(37px, 11vw, 50px);
-        letter-spacing: -1.8px;
-      }
-
-      .lead {
-        margin: 18px auto 20px;
-        font-size: 20px;
-        line-height: 1.45;
-      }
-
-      .platform-picker {
-        margin-bottom: 27px;
-      }
-
-      .platform-button {
-        min-width: 120px;
-        padding: 9px 15px;
-        font-size: 15px;
-      }
-
-      .games {
-        gap: 13px;
-      }
-
-      .game-card {
-        height: 234px;
-        padding: 25px 8px 18px;
-        border-radius: 25px;
-      }
-
-      .game-icon {
-        width: 108px;
-        height: 108px;
-        margin-bottom: 17px;
-        border-radius: 26px;
-      }
-
-      .game-icon.block {
-        background-size: 778.5px 1138.5px;
-        background-position: -175.5px -399.75px;
-      }
-
-      .game-icon.candy {
-        background-size: 778.5px 1138.5px;
-        background-position: -495.75px -400.5px;
-      }
-
-      .game-icon.subway {
-        background-size: 778.5px 1138.5px;
-        background-position: -175.5px -644.25px;
-      }
-
-      .game-icon.roblox {
-        background-size: 778.5px 1138.5px;
-        background-position: -495.75px -644.25px;
-      }
-
-      .eyebrow {
-        font-size: 14px;
-        letter-spacing: 0.8px;
-      }
-
-      .game-name {
-        margin-top: 6px;
-        font-size: 21px;
-      }
-
-      .notice {
-        margin-top: 25px;
-        padding: 23px 19px;
-        grid-template-columns: 35px 1fr;
-        gap: 12px;
-        border-radius: 24px;
-      }
-
-      .lock {
-        font-size: 29px;
-      }
-
-      .notice p {
-        font-size: 17px;
-        line-height: 1.48;
-      }
-
-      footer {
-        padding-top: 45px;
-        font-size: 16px;
-      }
-    }
-
     @media (max-width: 390px) {
       .page {
-        width: min(100% - 16px, 836px);
+        width: calc(100% - 16px);
       }
 
       .games {
@@ -452,41 +309,16 @@
       }
 
       .game-card {
-        height: 208px;
-        padding-top: 20px;
+        height: 165px;
+        padding-top: 15px;
       }
 
-      .game-icon {
-        width: 90px;
-        height: 90px;
+      .notice {
+        padding: 14px 12px;
       }
 
-      .game-icon.block {
-        background-size: 648.75px 948.75px;
-        background-position: -146.25px -333.125px;
-      }
-
-      .game-icon.candy {
-        background-size: 648.75px 948.75px;
-        background-position: -413.125px -333.75px;
-      }
-
-      .game-icon.subway {
-        background-size: 648.75px 948.75px;
-        background-position: -146.25px -536.875px;
-      }
-
-      .game-icon.roblox {
-        background-size: 648.75px 948.75px;
-        background-position: -413.125px -536.875px;
-      }
-
-      .eyebrow {
-        font-size: 12px;
-      }
-
-      .game-name {
-        font-size: 18px;
+      .notice p {
+        font-size: 12.5px;
       }
     }
 
@@ -501,14 +333,21 @@
 <body>
   <main class="page">
     <header>
-      <div class="brand-row" aria-label="TikTok and Gravypass">
+      <div
+        class="brand-row"
+        aria-label="TikTok and Gravypass">
+
         <span
           class="sprite brand tiktok"
           role="img"
           aria-label="TikTok">
         </span>
 
-        <span class="brand-x" aria-hidden="true">×</span>
+        <span
+          class="brand-x"
+          aria-hidden="true">
+          ×
+        </span>
 
         <span
           class="sprite brand gravy"
@@ -518,7 +357,12 @@
       </div>
 
       <div class="verified">
-        <span class="check" aria-hidden="true">✓</span>
+        <span
+          class="check"
+          aria-hidden="true">
+          ✓
+        </span>
+
         <span>Verified by TikTok</span>
       </div>
 
@@ -528,29 +372,12 @@
         Pick a game below to start earning real cash through
         Gravypass while you play.
       </p>
-
-      <div
-        class="platform-picker"
-        role="group"
-        aria-label="Choose your phone">
-
-        <button
-          class="platform-button"
-          type="button"
-          data-platform="ios">
-           iPhone
-        </button>
-
-        <button
-          class="platform-button"
-          type="button"
-          data-platform="android">
-          Android
-        </button>
-      </div>
     </header>
 
-    <section class="games" aria-label="Available games">
+    <section
+      class="games"
+      aria-label="Available games">
+
       <a
         class="game-card featured"
         href="#"
@@ -562,8 +389,13 @@
           aria-label="Block Blast app icon">
         </span>
 
-        <span class="eyebrow">GET PAID TO PLAY</span>
-        <span class="game-name">Block Blast</span>
+        <span class="eyebrow">
+          GET PAID TO PLAY
+        </span>
+
+        <span class="game-name">
+          Block Blast
+        </span>
       </a>
 
       <a
@@ -577,8 +409,13 @@
           aria-label="Candy Crush app icon">
         </span>
 
-        <span class="eyebrow">GET PAID TO PLAY</span>
-        <span class="game-name">Candy Crush</span>
+        <span class="eyebrow">
+          GET PAID TO PLAY
+        </span>
+
+        <span class="game-name">
+          Candy Crush
+        </span>
       </a>
 
       <a
@@ -592,8 +429,13 @@
           aria-label="Subway Surfers app icon">
         </span>
 
-        <span class="eyebrow">GET PAID TO PLAY</span>
-        <span class="game-name">Subway Surfers</span>
+        <span class="eyebrow">
+          GET PAID TO PLAY
+        </span>
+
+        <span class="game-name">
+          Subway Surfers
+        </span>
       </a>
 
       <a
@@ -607,13 +449,22 @@
           aria-label="Roblox app icon">
         </span>
 
-        <span class="eyebrow">GET PAID TO PLAY</span>
-        <span class="game-name">Roblox</span>
+        <span class="eyebrow">
+          GET PAID TO PLAY
+        </span>
+
+        <span class="game-name">
+          Roblox
+        </span>
       </a>
     </section>
 
     <aside class="notice">
-      <span class="lock" aria-hidden="true">🔒</span>
+      <span
+        class="lock"
+        aria-hidden="true">
+        🔒
+      </span>
 
       <p>
         <strong>
@@ -623,9 +474,13 @@
         <br />
 
         Download &amp; complete
-        <span class="green">2 quick game offers</span>
+        <span class="green">
+          2 quick game offers
+        </span>
         from
-        <span id="storeName">the App Store</span>
+        <span id="storeName">
+          the App Store
+        </span>
         to unlock
         <span class="green">
           either Block Blast or Candy Crush
@@ -643,7 +498,7 @@
 
   <script>
     /*
-      Add your separate iPhone and Android destination URLs below.
+      Add separate destination URLs for iOS and Android below.
     */
 
     const GAME_LINKS = {
@@ -662,22 +517,21 @@
       }
     };
 
-    const platformButtons =
-      document.querySelectorAll(".platform-button");
-
     const storeName =
       document.getElementById("storeName");
 
     function detectPlatform() {
-      const requestedPlatform =
-        new URLSearchParams(window.location.search).get("platform");
-
       /*
-        You can manually force a platform using:
+        Allows platform testing with:
 
         ?platform=ios
         ?platform=android
       */
+
+      const requestedPlatform =
+        new URLSearchParams(
+          window.location.search
+        ).get("platform");
 
       if (
         requestedPlatform === "ios" ||
@@ -686,11 +540,11 @@
         return requestedPlatform;
       }
 
-      const userAgent = navigator.userAgent || "";
+      const userAgent =
+        navigator.userAgent || "";
 
       /*
-        Modern iPads sometimes identify themselves as Macs.
-        maxTouchPoints detects iPadOS in that situation.
+        Modern iPads sometimes identify as Macs.
       */
 
       const isIPadOS =
@@ -709,99 +563,50 @@
       }
 
       /*
-        Desktop visitors default to iPhone.
-        They can manually select Android.
+        Fallback used when testing from a desktop.
       */
 
       return "ios";
     }
 
-    let selectedPlatform = detectPlatform();
-
-    function setPlatform(
-      platform,
-      updateAddress = false
-    ) {
-      selectedPlatform = platform;
-
-      platformButtons.forEach((button) => {
-        const isActive =
-          button.dataset.platform === platform;
-
-        button.classList.toggle(
-          "active",
-          isActive
-        );
-
-        button.setAttribute(
-          "aria-pressed",
-          String(isActive)
-        );
-      });
-
-      storeName.textContent =
-        platform === "android"
-          ? "Google Play"
-          : "the App Store";
-
-      /*
-        When a visitor manually changes the platform,
-        save it in the page URL.
-      */
-
-      if (updateAddress) {
-        const currentURL =
-          new URL(window.location.href);
-
-        currentURL.searchParams.set(
-          "platform",
-          platform
-        );
-
-        window.history.replaceState(
-          {},
-          "",
-          currentURL
-        );
-      }
-    }
-
-    platformButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-        setPlatform(
-          button.dataset.platform,
-          true
-        );
-      });
-    });
+    const selectedPlatform =
+      detectPlatform();
 
     /*
-      Select the detected platform when the page loads.
+      Change the store wording automatically.
     */
 
-    setPlatform(selectedPlatform);
+    storeName.textContent =
+      selectedPlatform === "android"
+        ? "Google Play"
+        : "the App Store";
 
     document
       .querySelectorAll(".game-card")
       .forEach((card) => {
-        card.addEventListener("click", (event) => {
-          event.preventDefault();
+        card.addEventListener(
+          "click",
+          (event) => {
+            event.preventDefault();
 
-          document
-            .querySelectorAll(".game-card")
-            .forEach((item) => {
-              item.classList.remove("selected");
-            });
+            document
+              .querySelectorAll(".game-card")
+              .forEach((item) => {
+                item.classList.remove("selected");
+              });
 
-          card.classList.add("selected");
+            card.classList.add("selected");
 
-          const selectedGame =
-            card.dataset.game;
+            const selectedGame =
+              card.dataset.game;
 
-          const destination =
-            GAME_LINKS[selectedPlatform][selectedGame];
+            const destination =
+              GAME_LINKS[selectedPlatform][selectedGame];
 
-          if (destination) {
+            if (!destination) {
+              return;
+            }
+
             const destinationURL =
               new URL(
                 destination,
@@ -809,8 +614,8 @@
               );
 
             /*
-              Forward incoming tracking parameters such as:
-              source, campaign, ad, ttclid, subid, etc.
+              Forward tracking parameters such as:
+              source, campaign, ad, ttclid and subid.
             */
 
             new URLSearchParams(
@@ -830,7 +635,7 @@
             window.location.href =
               destinationURL.toString();
           }
-        });
+        );
       });
   </script>
 </body>
