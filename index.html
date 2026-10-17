@@ -16,7 +16,6 @@
       --white: #f7faf8;
       --muted: #a6adb6;
       --soft: #c8ceca;
-      --sprite: url("assets/source-sprite.png");
     }
 
     * {
@@ -76,31 +75,17 @@
       transform: translateY(-2px);
     }
 
-    .sprite {
+    .brand {
       display: block;
       flex: 0 0 auto;
-      background-image: var(--sprite);
-      background-repeat: no-repeat;
-    }
-
-    .brand {
       width: 80px;
       height: 80px;
       border-radius: 20px;
+      object-fit: cover;
       filter:
         drop-shadow(
           0 14px 24px rgba(21, 228, 101, 0.12)
         );
-    }
-
-    .brand.tiktok {
-      background-size: 692px 1012px;
-      background-position: -240px -6px;
-    }
-
-    .brand.gravy {
-      background-size: 692px 1012px;
-      background-position: -372px -6px;
     }
 
     .verified {
@@ -209,30 +194,12 @@
     }
 
     .game-icon {
+      display: block;
       width: 74px;
       height: 74px;
       margin-bottom: 11px;
       border-radius: 18px;
-    }
-
-    .game-icon.block {
-      background-size: 533.42px 780.17px;
-      background-position: -120.25px -273.93px;
-    }
-
-    .game-icon.candy {
-      background-size: 533.42px 780.17px;
-      background-position: -339.7px -274.42px;
-    }
-
-    .game-icon.subway {
-      background-size: 533.42px 780.17px;
-      background-position: -120.25px -441.35px;
-    }
-
-    .game-icon.roblox {
-      background-size: 533.42px 780.17px;
-      background-position: -339.7px -441.35px;
+      object-fit: cover;
     }
 
     .eyebrow {
@@ -337,11 +304,11 @@
         class="brand-row"
         aria-label="TikTok and Gravypass">
 
-        <span
-          class="sprite brand tiktok"
-          role="img"
-          aria-label="TikTok">
-        </span>
+        <img
+          class="brand"
+          src="./tiktok.png"
+          alt="TikTok"
+        />
 
         <span
           class="brand-x"
@@ -349,11 +316,11 @@
           ×
         </span>
 
-        <span
-          class="sprite brand gravy"
-          role="img"
-          aria-label="Gravypass">
-        </span>
+        <img
+          class="brand"
+          src="./gravypass.jpeg"
+          alt="Gravypass"
+        />
       </div>
 
       <div class="verified">
@@ -380,14 +347,14 @@
 
       <a
         class="game-card featured"
-        href="#"
+        href="https://www.stw4c9hx.com/DD2WZS/TBSQC4/?source_id=kryzxr"
         data-game="blockBlast">
 
-        <span
-          class="sprite game-icon block"
-          role="img"
-          aria-label="Block Blast app icon">
-        </span>
+        <img
+          class="game-icon"
+          src="./blockblast.jpg"
+          alt="Block Blast app icon"
+        />
 
         <span class="eyebrow">
           GET PAID TO PLAY
@@ -400,14 +367,14 @@
 
       <a
         class="game-card featured"
-        href="#"
+        href="https://www.stw4c9hx.com/DD2WZS/TBSQC4/?source_id=kryzxr"
         data-game="candyCrush">
 
-        <span
-          class="sprite game-icon candy"
-          role="img"
-          aria-label="Candy Crush app icon">
-        </span>
+        <img
+          class="game-icon"
+          src="./candy%20crush.jpeg"
+          alt="Candy Crush app icon"
+        />
 
         <span class="eyebrow">
           GET PAID TO PLAY
@@ -420,14 +387,14 @@
 
       <a
         class="game-card"
-        href="#"
+        href="https://www.stw4c9hx.com/DD2WZS/TBSQC4/?source_id=kryzxr"
         data-game="subwaySurfers">
 
-        <span
-          class="sprite game-icon subway"
-          role="img"
-          aria-label="Subway Surfers app icon">
-        </span>
+        <img
+          class="game-icon"
+          src="./subway%20surfers.png"
+          alt="Subway Surfers app icon"
+        />
 
         <span class="eyebrow">
           GET PAID TO PLAY
@@ -440,14 +407,14 @@
 
       <a
         class="game-card"
-        href="#"
+        href="https://www.stw4c9hx.com/DD2WZS/TBSQC4/?source_id=kryzxr"
         data-game="roblox">
 
-        <span
-          class="sprite game-icon roblox"
-          role="img"
-          aria-label="Roblox app icon">
-        </span>
+        <img
+          class="game-icon"
+          src="./roblox.png"
+          alt="Roblox app icon"
+        />
 
         <span class="eyebrow">
           GET PAID TO PLAY
@@ -498,31 +465,16 @@
 
   <script>
     /*
-      Add separate destination URLs for iOS and Android below.
+      Detect whether the visitor is using iOS or Android.
+      There is no visible platform selector.
     */
-
-    const GAME_LINKS = {
-      ios: {
-        blockBlast: "",
-        candyCrush: "",
-        subwaySurfers: "",
-        roblox: ""
-      },
-
-      android: {
-        blockBlast: "",
-        candyCrush: "",
-        subwaySurfers: "",
-        roblox: ""
-      }
-    };
 
     const storeName =
       document.getElementById("storeName");
 
     function detectPlatform() {
       /*
-        Allows platform testing with:
+        Optional testing:
 
         ?platform=ios
         ?platform=android
@@ -544,7 +496,7 @@
         navigator.userAgent || "";
 
       /*
-        Modern iPads sometimes identify as Macs.
+        Modern iPads sometimes identify themselves as Macs.
       */
 
       const isIPadOS =
@@ -563,7 +515,7 @@
       }
 
       /*
-        Fallback used when testing from a desktop.
+        Desktop fallback.
       */
 
       return "ios";
@@ -573,13 +525,17 @@
       detectPlatform();
 
     /*
-      Change the store wording automatically.
+      Automatically display App Store or Google Play.
     */
 
     storeName.textContent =
       selectedPlatform === "android"
         ? "Google Play"
         : "the App Store";
+
+    /*
+      Handle clicks on all four game cards.
+    */
 
     document
       .querySelectorAll(".game-card")
@@ -597,25 +553,12 @@
 
             card.classList.add("selected");
 
-            const selectedGame =
-              card.dataset.game;
-
-            const destination =
-              GAME_LINKS[selectedPlatform][selectedGame];
-
-            if (!destination) {
-              return;
-            }
-
             const destinationURL =
-              new URL(
-                destination,
-                window.location.href
-              );
+              new URL(card.href);
 
             /*
-              Forward tracking parameters such as:
-              source, campaign, ad, ttclid and subid.
+              Forward incoming tracking parameters without
+              overwriting source_id=kryzxr.
             */
 
             new URLSearchParams(
