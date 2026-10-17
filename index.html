@@ -4,7 +4,6 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#03130c" />
-
   <title>Choose Your Game</title>
 
   <style>
@@ -17,8 +16,6 @@
       --white: #f7faf8;
       --muted: #a6adb6;
       --soft: #c8ceca;
-
-      /* The supplied screenshot is used as a sprite for the exact icons. */
       --sprite: url("assets/source-sprite.png");
     }
 
@@ -41,7 +38,6 @@
         BlinkMacSystemFont,
         "Segoe UI",
         sans-serif;
-
       background-color: var(--bg);
       background-image:
         radial-gradient(
@@ -50,7 +46,6 @@
           transparent 1.8px
         );
       background-size: 80px 80px;
-
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
     }
@@ -66,8 +61,6 @@
       padding: 10px 0 12px;
       text-align: center;
     }
-
-    /* Brand section */
 
     .brand-row {
       display: flex;
@@ -94,7 +87,9 @@
       width: 120px;
       height: 120px;
       border-radius: 29px;
-      filter: drop-shadow(0 14px 24px rgba(21, 228, 101, 0.12));
+      filter: drop-shadow(
+        0 14px 24px rgba(21, 228, 101, 0.12)
+      );
     }
 
     .brand.tiktok {
@@ -107,25 +102,19 @@
       background-position: -558px -9px;
     }
 
-    /* Verification badge */
-
     .verified {
       width: fit-content;
       min-width: 362px;
       margin: 36px auto 38px;
       padding: 17px 34px;
-
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 20px;
-
       border: 2px solid #13823c;
       border-radius: 999px;
-
       color: var(--green);
       background: rgba(7, 42, 24, 0.55);
-
       font-size: 27px;
       font-weight: 760;
       letter-spacing: -0.4px;
@@ -134,25 +123,18 @@
     .check {
       display: grid;
       place-items: center;
-
       width: 40px;
       height: 40px;
-
       border-radius: 50%;
-
       color: #052216;
       background: #20ce66;
-
       font-size: 29px;
       font-weight: 900;
       line-height: 1;
     }
 
-    /* Heading */
-
     h1 {
       margin: 0;
-
       font-size: clamp(42px, 5.3vw, 56px);
       line-height: 1.05;
       letter-spacing: -2.4px;
@@ -161,16 +143,51 @@
 
     .lead {
       max-width: 720px;
-      margin: 24px auto 46px;
-
+      margin: 24px auto 25px;
       color: var(--muted);
-
       font-size: 29px;
       line-height: 1.45;
       letter-spacing: 0.1px;
     }
 
-    /* Game cards */
+    .platform-picker {
+      width: fit-content;
+      margin: 0 auto 34px;
+      padding: 5px;
+      display: flex;
+      gap: 5px;
+      border: 2px solid #145c32;
+      border-radius: 999px;
+      background: rgba(5, 29, 18, 0.94);
+    }
+
+    .platform-button {
+      min-width: 145px;
+      padding: 11px 20px;
+      border: 0;
+      border-radius: 999px;
+      color: #aeb7b1;
+      background: transparent;
+      font-size: 18px;
+      font-weight: 780;
+      cursor: pointer;
+      transition:
+        color 0.18s ease,
+        background 0.18s ease,
+        box-shadow 0.18s ease;
+    }
+
+    .platform-button:hover,
+    .platform-button:focus-visible {
+      outline: none;
+      color: #ffffff;
+    }
+
+    .platform-button.active {
+      color: #052216;
+      background: var(--green);
+      box-shadow: 0 7px 20px rgba(43, 228, 119, 0.2);
+    }
 
     .games {
       display: grid;
@@ -180,26 +197,19 @@
 
     .game-card {
       position: relative;
-
       height: 305px;
       padding: 36px 18px 27px;
-
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
-
       overflow: hidden;
-
       border: 2px solid var(--green-muted);
       border-radius: 34px;
-
       color: inherit;
       background: rgba(9, 29, 20, 0.93);
       text-decoration: none;
-
       cursor: pointer;
-
       transition:
         transform 0.18s ease,
         border-color 0.18s ease,
@@ -249,7 +259,6 @@
 
     .eyebrow {
       color: #bec4c0;
-
       font-size: 22px;
       line-height: 1.1;
       font-weight: 780;
@@ -258,28 +267,21 @@
 
     .game-name {
       margin-top: 8px;
-
       color: var(--green);
-
       font-size: 30px;
       line-height: 1.05;
       font-weight: 840;
       letter-spacing: -0.6px;
     }
 
-    /* Locked offer notice */
-
     .notice {
       margin-top: 37px;
       padding: 28px 32px;
-
       display: grid;
       grid-template-columns: 48px 1fr;
       gap: 20px;
-
       border: 3px solid var(--green-border);
       border-radius: 31px;
-
       background: rgba(6, 25, 16, 0.92);
       text-align: left;
     }
@@ -292,9 +294,7 @@
 
     .notice p {
       margin: 0;
-
       color: #d2d7d4;
-
       font-size: 26px;
       line-height: 1.43;
       letter-spacing: 0.05px;
@@ -312,15 +312,11 @@
 
     footer {
       padding: 73px 10px 8px;
-
       color: #9fa7b0;
-
       font-size: 24px;
       line-height: 1.35;
       letter-spacing: 0.15px;
     }
-
-    /* Tablet and phone */
 
     @media (max-width: 680px) {
       .page {
@@ -361,9 +357,19 @@
       }
 
       .lead {
-        margin: 18px auto 32px;
+        margin: 18px auto 20px;
         font-size: 20px;
         line-height: 1.45;
+      }
+
+      .platform-picker {
+        margin-bottom: 27px;
+      }
+
+      .platform-button {
+        min-width: 120px;
+        padding: 9px 15px;
+        font-size: 15px;
       }
 
       .games {
@@ -416,10 +422,8 @@
       .notice {
         margin-top: 25px;
         padding: 23px 19px;
-
         grid-template-columns: 35px 1fr;
         gap: 12px;
-
         border-radius: 24px;
       }
 
@@ -524,6 +528,26 @@
         Pick a game below to start earning real cash through
         Gravypass while you play.
       </p>
+
+      <div
+        class="platform-picker"
+        role="group"
+        aria-label="Choose your phone">
+
+        <button
+          class="platform-button"
+          type="button"
+          data-platform="ios">
+           iPhone
+        </button>
+
+        <button
+          class="platform-button"
+          type="button"
+          data-platform="android">
+          Android
+        </button>
+      </div>
     </header>
 
     <section class="games" aria-label="Available games">
@@ -600,7 +624,9 @@
 
         Download &amp; complete
         <span class="green">2 quick game offers</span>
-        from the App Store to unlock
+        from
+        <span id="storeName">the App Store</span>
+        to unlock
         <span class="green">
           either Block Blast or Candy Crush
         </span>
@@ -617,39 +643,195 @@
 
   <script>
     /*
-      Add the destination URL for each game below.
-
-      Example:
-      blockBlast: "https://yourdomain.com/offer?game=block-blast"
+      Add your separate iPhone and Android destination URLs below.
     */
 
     const GAME_LINKS = {
-      blockBlast: "",
-      candyCrush: "",
-      subwaySurfers: "",
-      roblox: ""
+      ios: {
+        blockBlast: "",
+        candyCrush: "",
+        subwaySurfers: "",
+        roblox: ""
+      },
+
+      android: {
+        blockBlast: "",
+        candyCrush: "",
+        subwaySurfers: "",
+        roblox: ""
+      }
     };
 
-    document.querySelectorAll(".game-card").forEach((card) => {
-      card.addEventListener("click", (event) => {
-        event.preventDefault();
+    const platformButtons =
+      document.querySelectorAll(".platform-button");
 
-        document
-          .querySelectorAll(".game-card")
-          .forEach((item) => {
-            item.classList.remove("selected");
-          });
+    const storeName =
+      document.getElementById("storeName");
 
-        card.classList.add("selected");
+    function detectPlatform() {
+      const requestedPlatform =
+        new URLSearchParams(window.location.search).get("platform");
 
-        const selectedGame = card.dataset.game;
-        const destination = GAME_LINKS[selectedGame];
+      /*
+        You can manually force a platform using:
 
-        if (destination) {
-          window.location.href = destination;
-        }
+        ?platform=ios
+        ?platform=android
+      */
+
+      if (
+        requestedPlatform === "ios" ||
+        requestedPlatform === "android"
+      ) {
+        return requestedPlatform;
+      }
+
+      const userAgent = navigator.userAgent || "";
+
+      /*
+        Modern iPads sometimes identify themselves as Macs.
+        maxTouchPoints detects iPadOS in that situation.
+      */
+
+      const isIPadOS =
+        navigator.platform === "MacIntel" &&
+        navigator.maxTouchPoints > 1;
+
+      if (/android/i.test(userAgent)) {
+        return "android";
+      }
+
+      if (
+        /iPad|iPhone|iPod/i.test(userAgent) ||
+        isIPadOS
+      ) {
+        return "ios";
+      }
+
+      /*
+        Desktop visitors default to iPhone.
+        They can manually select Android.
+      */
+
+      return "ios";
+    }
+
+    let selectedPlatform = detectPlatform();
+
+    function setPlatform(
+      platform,
+      updateAddress = false
+    ) {
+      selectedPlatform = platform;
+
+      platformButtons.forEach((button) => {
+        const isActive =
+          button.dataset.platform === platform;
+
+        button.classList.toggle(
+          "active",
+          isActive
+        );
+
+        button.setAttribute(
+          "aria-pressed",
+          String(isActive)
+        );
+      });
+
+      storeName.textContent =
+        platform === "android"
+          ? "Google Play"
+          : "the App Store";
+
+      /*
+        When a visitor manually changes the platform,
+        save it in the page URL.
+      */
+
+      if (updateAddress) {
+        const currentURL =
+          new URL(window.location.href);
+
+        currentURL.searchParams.set(
+          "platform",
+          platform
+        );
+
+        window.history.replaceState(
+          {},
+          "",
+          currentURL
+        );
+      }
+    }
+
+    platformButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        setPlatform(
+          button.dataset.platform,
+          true
+        );
       });
     });
+
+    /*
+      Select the detected platform when the page loads.
+    */
+
+    setPlatform(selectedPlatform);
+
+    document
+      .querySelectorAll(".game-card")
+      .forEach((card) => {
+        card.addEventListener("click", (event) => {
+          event.preventDefault();
+
+          document
+            .querySelectorAll(".game-card")
+            .forEach((item) => {
+              item.classList.remove("selected");
+            });
+
+          card.classList.add("selected");
+
+          const selectedGame =
+            card.dataset.game;
+
+          const destination =
+            GAME_LINKS[selectedPlatform][selectedGame];
+
+          if (destination) {
+            const destinationURL =
+              new URL(
+                destination,
+                window.location.href
+              );
+
+            /*
+              Forward incoming tracking parameters such as:
+              source, campaign, ad, ttclid, subid, etc.
+            */
+
+            new URLSearchParams(
+              window.location.search
+            ).forEach((value, key) => {
+              if (
+                key !== "platform" &&
+                !destinationURL.searchParams.has(key)
+              ) {
+                destinationURL.searchParams.set(
+                  key,
+                  value
+                );
+              }
+            });
+
+            window.location.href =
+              destinationURL.toString();
+          }
+        });
+      });
   </script>
 </body>
 </html>
