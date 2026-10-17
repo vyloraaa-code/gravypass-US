@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#03130c" />
+
   <title>Choose Your Game</title>
 
   <style>
@@ -49,7 +50,6 @@
       text-rendering: optimizeLegibility;
     }
 
-    button,
     a {
       font: inherit;
     }
@@ -171,6 +171,8 @@
       text-decoration: none;
 
       cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
 
       transition:
         transform 0.18s ease,
@@ -183,14 +185,27 @@
       border-color: var(--green-border);
     }
 
+    /*
+      Makes sure taps on the icon or text are handled
+      by the parent link.
+    */
+
+    .game-card > * {
+      pointer-events: none;
+    }
+
     .game-card:hover,
-    .game-card:focus-visible,
-    .game-card.selected {
+    .game-card:focus-visible {
       outline: none;
       transform: translateY(-4px);
       border-color: var(--green);
       box-shadow:
         0 18px 44px rgba(12, 201, 91, 0.15);
+    }
+
+    .game-card:active {
+      transform: scale(0.98);
+      border-color: var(--green);
     }
 
     .game-icon {
@@ -348,6 +363,7 @@
       <a
         class="game-card featured"
         href="https://www.stw4c9hx.com/DD2WZS/TBSQC4/?source_id=kryzxr"
+        target="_top"
         data-game="blockBlast">
 
         <img
@@ -368,6 +384,7 @@
       <a
         class="game-card featured"
         href="https://www.stw4c9hx.com/DD2WZS/TBSQC4/?source_id=kryzxr"
+        target="_top"
         data-game="candyCrush">
 
         <img
@@ -388,6 +405,7 @@
       <a
         class="game-card"
         href="https://www.stw4c9hx.com/DD2WZS/TBSQC4/?source_id=kryzxr"
+        target="_top"
         data-game="subwaySurfers">
 
         <img
@@ -408,6 +426,7 @@
       <a
         class="game-card"
         href="https://www.stw4c9hx.com/DD2WZS/TBSQC4/?source_id=kryzxr"
+        target="_top"
         data-game="roblox">
 
         <img
@@ -465,8 +484,8 @@
 
   <script>
     /*
-      Detect whether the visitor is using iOS or Android.
-      There is no visible platform selector.
+      This script only changes the store wording.
+      It does not intercept or prevent link clicks.
     */
 
     const storeName =
@@ -474,7 +493,7 @@
 
     function detectPlatform() {
       /*
-        Optional testing:
+        Optional platform testing:
 
         ?platform=ios
         ?platform=android
@@ -495,10 +514,6 @@
       const userAgent =
         navigator.userAgent || "";
 
-      /*
-        Modern iPads sometimes identify themselves as Macs.
-      */
-
       const isIPadOS =
         navigator.platform === "MacIntel" &&
         navigator.maxTouchPoints > 1;
@@ -514,72 +529,16 @@
         return "ios";
       }
 
-      /*
-        Desktop fallback.
-      */
-
       return "ios";
     }
 
     const selectedPlatform =
       detectPlatform();
 
-    /*
-      Automatically display App Store or Google Play.
-    */
-
     storeName.textContent =
       selectedPlatform === "android"
         ? "Google Play"
         : "the App Store";
-
-    /*
-      Handle clicks on all four game cards.
-    */
-
-    document
-      .querySelectorAll(".game-card")
-      .forEach((card) => {
-        card.addEventListener(
-          "click",
-          (event) => {
-            event.preventDefault();
-
-            document
-              .querySelectorAll(".game-card")
-              .forEach((item) => {
-                item.classList.remove("selected");
-              });
-
-            card.classList.add("selected");
-
-            const destinationURL =
-              new URL(card.href);
-
-            /*
-              Forward incoming tracking parameters without
-              overwriting source_id=kryzxr.
-            */
-
-            new URLSearchParams(
-              window.location.search
-            ).forEach((value, key) => {
-              if (
-                key !== "platform" &&
-                !destinationURL.searchParams.has(key)
-              ) {
-                destinationURL.searchParams.set(
-                  key,
-                  value
-                );
-              }
-            });
-
-            window.location.href =
-              destinationURL.toString();
-          }
-        );
-      });
   </script>
 </body>
 </html>
